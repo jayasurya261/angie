@@ -7,7 +7,13 @@ import arrowCard from '../assets/arrow-card.svg'
 const portfolio = [
   { 
     name: 'Codesapiens community', desc: `Community student management project`,
-    cover: `https://axvfpbdzas50.objectstorage.ap-hyderabad-1.oci.customer-oci.com/n/axvfpbdzas50/b/surya/o/codesapiens-website-home-pageScreenshot%202025-10-12%20124305.png`
+    cover: `https://axvfpbdzas50.objectstorage.ap-hyderabad-1.oci.customer-oci.com/n/axvfpbdzas50/b/surya/o/codesapiens-website-home-pageScreenshot%202025-10-12%20124305.png`,
+    link: 'https://www.codesapiens.in'
+  },
+  { 
+    name: 'Repowave', desc: ` We curate top repositories and highlight beginner-friendly issues to help you make your first contribution with confidence. `,
+    cover: `https://res.cloudinary.com/dqudvximt/image/upload/v1773309490/Screenshot_2026-03-12_152731_lyk6jq.png`,
+    link: 'https://repowave.space'
   },
   
 ]
@@ -22,7 +28,7 @@ const portfolio = [
   
     <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10"> 
       {portfolio.map(item => ( 
-        <a href="#" class="flex flex-col bg-white p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
+        <a href={item.link} target={item.link !== '#' ? '_blank' : '_self'} class="flex flex-col bg-white p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
           <div class="w-full h-[200px] overflow-hidden border-2">
            <img src={item.cover} alt="" class="w-full h-full object-cover" />
           </div>
