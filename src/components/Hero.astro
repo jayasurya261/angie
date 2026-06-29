@@ -22,16 +22,17 @@ import { author, buy } from '../sample'
           <img src={svgheroContent.src} alt="logo" width="80" />
 
             <h1 class="text-5xl font-medium">
-              <span>I build top <br> notch</span>
+              <span>Full Stack <br> Developer</span>
               <span class="relative">
                 <span class="absolute bg-[var(--yellow)] w-full h-[50%] left-0 bottom-0 z-1"></span>
-                <span class="relative z-5">Products</span>
+                <span class="relative z-5">Portfolio</span>
               </span>
             </h1>
-            <p class="text-xl">Multi-disciplinary engineer with expertise across data, cloud, DevOps and immersive technologies</p>
+            <p class="text-xl">Computer Science undergraduate building full-stack apps with React, Node.js, MongoDB, RBAC, and REST APIs.</p>
+            <p class="text-sm text-neutral-700">Email: {author.email} | LinkedIn: <a class="underline" href={author.LinkedIn} target="_blank" rel="noreferrer">jayasurya-r-b37997279</a> | {author.location}</p>
            <div class="flex mt-5">
              <Button text="See portfolio" link="/#work" target="_self" />
-           </div>
+            </div>
         </div>
         <div class="relative mt-40 md:mt-0">
           <div class="flex absolute -top-20 left-0 z-10">
@@ -53,8 +54,10 @@ import { author, buy } from '../sample'
             <img src={svgIdea.src} width="60" alt="idea" class="absolute top-16 -left-3 z-10" />   
             <img src={svgString.src} width="50" alt="string" class="absolute -top-6 -right-2 z-10" />             
           
-             <div id="me" class="w-full h-[310px] border-2"></div>
-             <Bars />
+              <div id="me" class="w-full h-[310px] border-2 overflow-hidden">
+                <img src="https://res.cloudinary.com/dqudvximt/image/upload/v1759925520/1732031130575_b834gr.jpg" alt={`${author.name} portrait`} class="h-full w-full object-cover object-top" />
+              </div>
+              <Bars />
           </div>
         </div>
 
@@ -63,12 +66,8 @@ import { author, buy } from '../sample'
 
     <img src={svgPinkStar.src} alt="start" width="50" class="absolute -bottom-4" />
   </section>
-
-
   <style>
     #me{
-     background-image: url('https://res.cloudinary.com/dqudvximt/image/upload/v1759925520/1732031130575_b834gr.jpg');
-     background-position: top;
-     background-size: cover;
+      background-color: white;
     }
-   </style>
+  </style>

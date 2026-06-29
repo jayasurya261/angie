@@ -2,7 +2,8 @@ const author = {
     name: `Jayasurya`,
     nickname: `surya`,
     LinkedIn: `https://www.linkedin.com/in/jayasurya-r-b37997279`,
-    email: 'suryasunrise261@gmail.com'
+    email: 'suryasunrise261@gmail.com',
+    location: 'Coimbatore, India'
 
 }
 

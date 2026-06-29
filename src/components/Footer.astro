@@ -2,22 +2,30 @@
 import logoStar from '../assets/logo-star.svg'
 import { author } from '../sample'
 
-const socials = [
-  { icon: 'ri-tiktok-fill', link: author.tiktok },
-	{ icon: 'ri-instagram-line', link: author.ig },
-  { icon: 'ri-twitter-x-line', link: author.x },
+const highlights = [
+  'B.E. Computer Science and Engineering, 2023 - 2027',
+  'English (Advanced) | Tamil (Native)',
+  'First Runner-Up at Oru Git in Khadai Contest',
+  'Participant in Evolumin and SRISHTI hackathons',
 ]
 
 ---
 
 <footer class="border-t-4 px-5 md:px-0 py-10 mt-30">
-    <div class="max-w-3xl mx-auto flex justify-center flex-col gap-5 md:gap-0 md:grid md:grid-cols-3 items-center">
+    <div class="max-w-4xl mx-auto flex justify-center flex-col gap-6">
       <div class="flex-1 font-bold">
         <a href="/" class="flex items-center gap-3 text-xl">
             <img src={logoStar.src} alt="logo" width="30" /> {author.nickname}
         </a>
       </div>
-      <div class="text-center">
+      <div class="grid gap-3 md:grid-cols-2">
+        {highlights.map(item => (
+          <div class="border-2 bg-white p-4 text-sm">
+            {item}
+          </div>
+        ))}
+      </div>
+      <div class="text-center text-sm">
         <p>© {new Date().getFullYear()} {author.nickname}. All rights reserved.</p>
       </div>
       
