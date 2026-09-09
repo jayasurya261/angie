@@ -1,0 +1,128 @@
+---
+import Bars from "./Bars.astro"
+import svgUnderline from '../assets/underline.svg'
+import { surgeSampleData, lastUpdatedDate, trackedCompaniesCount, totalWeeklyRolesCount } from '../data/surge-sample'
+import { products } from '../data/products'
+
+const product = products.find(p => p.slug === 'surge') || products[0];
+---
+
+<section class="py-16 px-4" id="sample-data">
+  <div class="max-w-6xl mx-auto">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-10 relative">
+      <div class="inline-block bg-[var(--yellow)] px-3 py-1 text-xs font-black uppercase border-2 border-black mb-3">
+        Verified Data Sample
+      </div>
+      <h2 class="text-3xl md:text-5xl font-black">Live Data Preview</h2>
+      <p class="text-neutral-700 mt-2 text-md">
+        Here is a 10-role preview from this week's <strong>{totalWeeklyRolesCount} curated openings</strong> across {trackedCompaniesCount}+ companies.
+      </p>
+      <div class="flex items-center justify-center gap-2 mt-3 text-xs font-bold text-neutral-600">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+        <span>Snapshot Date: {lastUpdatedDate}</span>
+      </div>
+    </div>
+
+    <!-- Brutalist Table Card -->
+    <div class="bg-white border-3 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] overflow-hidden">
+      
+      <!-- Table Top Toolbar -->
+      <div class="p-4 bg-neutral-100 border-b-3 border-black flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <div class="size-3 bg-red-400 border border-black rounded-full"></div>
+          <div class="size-3 bg-yellow-400 border border-black rounded-full"></div>
+          <div class="size-3 bg-green-400 border border-black rounded-full"></div>
+          <span class="font-mono text-xs font-bold ml-2 text-neutral-800">engineering_surge_feed_preview.csv</span>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-bold">
+          <span class="bg-white border border-black px-2 py-1">Top 10 of {totalWeeklyRolesCount} records</span>
+          <span class="bg-[var(--blue)] border border-black px-2 py-1">Direct ATS Endpoints</span>
+        </div>
+      </div>
+
+      <!-- Responsive Table Container -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[760px]">
+          <thead>
+            <tr class="bg-black text-white text-xs font-bold uppercase tracking-wider">
+              <th class="p-3.5 border-r border-neutral-800">Company</th>
+              <th class="p-3.5 border-r border-neutral-800">Role & Team</th>
+              <th class="p-3.5 border-r border-neutral-800">Location</th>
+              <th class="p-3.5 border-r border-neutral-800">Salary Band</th>
+              <th class="p-3.5 border-r border-neutral-800 text-center">ATS Source</th>
+              <th class="p-3.5 border-r border-neutral-800">Surge Signal</th>
+              <th class="p-3.5 text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y-2 divide-neutral-200 text-sm">
+            {surgeSampleData.map((row, idx) => (
+              <tr class={`hover:bg-[#fefff5] transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-[#fafafa]'}`}>
+                <td class="p-3.5 font-black text-black border-r border-neutral-200">
+                  <div class="flex items-center gap-1.5">
+                    <span>{row.company}</span>
+                  </div>
+                </td>
+                <td class="p-3.5 border-r border-neutral-200">
+                  <div class="font-bold text-neutral-900">{row.role}</div>
+                  <div class="text-xs text-neutral-500 font-medium">{row.department}</div>
+                </td>
+                <td class="p-3.5 text-neutral-700 border-r border-neutral-200 whitespace-nowrap text-xs">
+                  {row.location}
+                </td>
+                <td class="p-3.5 font-mono text-xs font-bold text-neutral-800 border-r border-neutral-200 whitespace-nowrap">
+                  {row.salary}
+                </td>
+                <td class="p-3.5 border-r border-neutral-200 text-center whitespace-nowrap">
+                  <span class={`inline-block px-2 py-0.5 text-xs font-bold border border-black ${
+                    row.atsSource === 'Ashby' 
+                      ? 'bg-purple-100 text-purple-900' 
+                      : row.atsSource === 'Greenhouse' 
+                      ? 'bg-emerald-100 text-emerald-900' 
+                      : 'bg-blue-100 text-blue-900'
+                  }`}>
+                    {row.atsSource}
+                  </span>
+                </td>
+                <td class="p-3.5 border-r border-neutral-200 whitespace-nowrap">
+                  <span class="inline-flex items-center gap-1 bg-amber-100 text-amber-900 border border-amber-300 px-2 py-0.5 text-xs font-black">
+                    🔥 {row.surgeDelta}
+                  </span>
+                </td>
+                <td class="p-3.5 text-center whitespace-nowrap">
+                  <a 
+                    href={row.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="inline-block bg-white hover:bg-black hover:text-white text-black font-bold text-xs px-2.5 py-1 border border-black transition-all">
+                    Link ↗
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Bottom Banner Inside Card -->
+      <div class="p-6 bg-[#FEFFF0] border-t-3 border-black flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <h4 class="font-black text-lg">Get the complete unedited dataset with all {totalWeeklyRolesCount}+ roles every Monday</h4>
+          <p class="text-sm text-neutral-700">Subscribers receive raw CSV data with direct career links, enriched salary data, and weekly change diffs.</p>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <a 
+            href={product.dodoLink} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="bg-[var(--yellow)] hover:bg-[#ffe37d] text-black text-sm font-black px-6 py-3 border-2 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)] transition-all">
+            Subscribe ${product.price}/mo →
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

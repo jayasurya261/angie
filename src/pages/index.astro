@@ -1,27 +1,287 @@
 ---
 import '../styles/global.css'
 import Layout from "../layouts/Layout.astro"
-
 import Header from '../components/Header.astro'
-import Hero from '../components/Hero.astro'
-import Tools from '../components/Tools.astro'
+import ProductHero from '../components/ProductHero.astro'
+import SampleTable from '../components/SampleTable.astro'
+import PricingCard from '../components/PricingCard.astro'
+import FAQ from '../components/FAQ.astro'
 import Footer from '../components/Footer.astro'
-import Reviews from '../components/Reviews.astro'
-import CallToAction from '../components/CallToAction.astro'
-import Works from '../components/Works.astro'
-import Service from '../components/Service.astro'
+import Bars from '../components/Bars.astro'
+import svgUnderline from '../assets/underline.svg'
+import svgRedStar from '../assets/red-star.svg'
+import svgPinkStar from '../assets/pink-star.svg'
+import { products } from '../data/products'
 
+const surgeProduct = products.find(p => p.slug === 'surge') || products[0];
+
+const pageTitle = "Jayasurya Data Studio | Engineering Hiring Surge Intelligence & B2B Data Feeds";
+const pageDesc = "Automated market intelligence products tracking engineering hiring spikes, headcount expansion, and verified compensation across 90+ tech companies.";
 ---
 
-
-<Layout>
+<Layout title={pageTitle} description={pageDesc}>
   <Header />
-  <Hero />
-  <Tools />
-  <Service />
-  <Works />
-  <!-- <Reviews /> -->
-  <CallToAction />
+
+  <!-- 1. Flagship Product Hero -->
+  <ProductHero />
+
+  <!-- 2. What You Get / Pipeline Architecture -->
+  <section class="py-16 px-4 bg-[#f8f9eb] border-y-3 border-black">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="inline-block bg-[var(--yellow)] px-3 py-1 text-xs font-black uppercase border-2 border-black mb-3">
+          Inside the Feed
+        </div>
+        <h2 class="text-3xl md:text-5xl font-black">Direct ATS Pipelines // Zero Noise</h2>
+        <p class="text-neutral-700 mt-2 text-md">
+          A standardized, weekly intelligence package engineered for immediate action in your outreach, talent sourcing, or recruiting CRM.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="bg-white border-2 border-black p-5 shadow-[4px_4px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+          <div>
+            <div class="size-10 bg-[var(--blue)] border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
+              <i class="ri-radar-line"></i>
+            </div>
+            <h3 class="font-black text-lg mb-2">100% Direct ATS Feeds</h3>
+            <p class="text-xs text-neutral-700 leading-relaxed">
+              Harvested directly from official Ashby, Greenhouse, and Lever endpoints. Never scraped from third-party aggregators.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-neutral-200 text-[11px] font-bold text-neutral-500 uppercase">
+            Zero Ghost Jobs
+          </div>
+        </div>
+
+        <div class="bg-white border-2 border-black p-5 shadow-[4px_4px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+          <div>
+            <div class="size-10 bg-[var(--yellow)] border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
+              <i class="ri-calendar-check-line"></i>
+            </div>
+            <h3 class="font-black text-lg mb-2">Monday 8:00 AM Delivery</h3>
+            <p class="text-xs text-neutral-700 leading-relaxed">
+              Automated pipelines run Sunday night and land in your inbox Monday morning before hiring managers begin their work week.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-neutral-200 text-[11px] font-bold text-neutral-500 uppercase">
+            Weekly Freshness
+          </div>
+        </div>
+
+        <div class="bg-white border-2 border-black p-5 shadow-[4px_4px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+          <div>
+            <div class="size-10 bg-emerald-200 border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
+              <i class="ri-table-line"></i>
+            </div>
+            <h3 class="font-black text-lg mb-2">Clean Standardized CSV</h3>
+            <p class="text-xs text-neutral-700 leading-relaxed">
+              Normalized fields: Company, Role Title, Department, Location (Remote/Onsite), Salary Range, ATS Source, Direct Application Link.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-neutral-200 text-[11px] font-bold text-neutral-500 uppercase">
+            Ready for CRM Import
+          </div>
+        </div>
+
+        <div class="bg-white border-2 border-black p-5 shadow-[4px_4px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+          <div>
+            <div class="size-10 bg-purple-200 border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
+              <i class="ri-flashlight-line"></i>
+            </div>
+            <h3 class="font-black text-lg mb-2">Surge Velocity Signals</h3>
+            <p class="text-xs text-neutral-700 leading-relaxed">
+              Track net new hiring spikes (+4, +6 roles in a week) signaling newly funded teams or rapid engineering expansion.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-neutral-200 text-[11px] font-bold text-neutral-500 uppercase">
+            Headcount Velocity
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. Live Verified Data Preview -->
+  <SampleTable />
+
+  <!-- 4. Product Catalog Suite -->
+  <section class="py-16 px-4 bg-white border-y-3 border-black" id="products">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="max-w-3xl mb-12">
+        <div class="inline-flex items-center gap-2 bg-black text-white px-3 py-1 text-xs font-black uppercase mb-3">
+          <span>Data Studio Catalog</span>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-black">All Intelligence Feeds</h2>
+        <p class="text-neutral-700 mt-2 text-md">
+          One continuous data harvesting factory powering specialized market intelligence feeds.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {products.map(product => (
+          <div class={`bg-[#FEFFF0] border-3 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,1)] flex flex-col justify-between relative ${product.status === 'live' ? 'ring-2 ring-black' : 'opacity-90'}`}>
+            <div>
+              <div class="flex items-center justify-between border-b-2 border-black pb-3 mb-4">
+                <span class={`text-xs font-black px-2 py-0.5 border border-black ${
+                  product.status === 'live' ? 'bg-[var(--yellow)] text-black' : 'bg-neutral-200 text-neutral-700'
+                }`}>
+                  {product.badge}
+                </span>
+                <span class="font-mono text-sm font-bold text-neutral-800">
+                  ${product.price} / {product.interval}
+                </span>
+              </div>
+
+              <h3 class="text-xl font-black mb-2">{product.name}</h3>
+              <p class="text-xs font-bold text-neutral-600 mb-3">{product.tagline}</p>
+              <p class="text-xs text-neutral-700 leading-relaxed mb-4">{product.description}</p>
+
+              <div class="bg-white border border-black p-2.5 space-y-1 text-xs mb-4">
+                <div class="font-bold text-neutral-800">{product.coverage}</div>
+                <div class="text-neutral-500">{product.cadence}</div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t-2 border-black">
+              {product.status === 'live' ? (
+                <a 
+                  href={`/products/${product.slug}`} 
+                  class="w-full bg-[var(--yellow)] hover:bg-[#ffe37d] text-black font-black text-xs py-3 px-3 border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,1)] transition-all flex items-center justify-center gap-1.5">
+                  <span>View Surge Feed Details</span>
+                  <i class="ri-arrow-right-line"></i>
+                </a>
+              ) : (
+                <a 
+                  href={product.dodoLink} 
+                  class="w-full bg-neutral-100 hover:bg-neutral-200 text-neutral-800 font-bold text-xs py-2.5 px-3 border border-black text-center block transition-all">
+                  Join Early Access Waitlist →
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Who Relies on This Feed -->
+  <section class="py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="inline-block bg-[var(--blue)] px-3 py-1 text-xs font-black uppercase border-2 border-black mb-3">
+          Target Audience
+        </div>
+        <h2 class="text-3xl md:text-5xl font-black">Who Relies on This Feed</h2>
+        <p class="text-neutral-700 mt-2 text-md">
+          Built for teams whose revenue depends on reaching hiring companies first.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white border-3 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+          <div>
+            <div class="inline-block bg-black text-white text-xs font-mono font-bold px-2 py-0.5 mb-3">
+              01 // STAFFING
+            </div>
+            <h3 class="font-black text-xl mb-2">Staffing & Headhunting Agencies</h3>
+            <p class="text-sm text-neutral-700 leading-relaxed">
+              Find fast-growing engineering orgs with sudden hiring spikes before other agencies reach their VP of Engineering.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-neutral-200 text-xs font-bold text-emerald-700">
+            ✓ Outbound pipeline intelligence
+          </div>
+        </div>
+
+        <div class="bg-white border-3 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+          <div>
+            <div class="inline-block bg-black text-white text-xs font-mono font-bold px-2 py-0.5 mb-3">
+              02 // SOURCING
+            </div>
+            <h3 class="font-black text-xl mb-2">Talent Leads & In-house Sourcers</h3>
+            <p class="text-sm text-neutral-700 leading-relaxed">
+              Monitor which tech hubs and stacks are heating up, benchmark competitive compensation packages, and spot team expansions.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-neutral-200 text-xs font-bold text-emerald-700">
+            ✓ Competitive talent mapping
+          </div>
+        </div>
+
+        <div class="bg-white border-3 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+          <div>
+            <div class="inline-block bg-black text-white text-xs font-mono font-bold px-2 py-0.5 mb-3">
+              03 // RESEARCH
+            </div>
+            <h3 class="font-black text-xl mb-2">B2B SaaS Founders & GTM Teams</h3>
+            <p class="text-sm text-neutral-700 leading-relaxed">
+              Companies hiring 5+ backend or AI engineers are currently scaling infrastructure and purchasing developer tools.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-neutral-200 text-xs font-bold text-emerald-700">
+            ✓ High-intent buyer intent signals
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. Pricing Section -->
+  <PricingCard />
+
+  <!-- 7. FAQ Section -->
+  <FAQ />
+
+  <!-- 8. Meet the Builder / Credibility Bridge Section -->
+  <section class="py-16 px-4 bg-[#f8f9eb] border-t-3 border-black">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white border-3 border-black p-6 md:p-8 shadow-[8px_8px_0px_rgba(0,0,0,1)] relative">
+        <img src={svgPinkStar.src} alt="" width="60" class="absolute -top-7 -right-4 hidden sm:block" />
+
+        <div class="grid grid-cols-1 md:grid-cols-[70%_30%] gap-6 items-center">
+          <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 bg-black text-white px-2.5 py-0.5 text-xs font-mono font-bold uppercase">
+              <span>About the Studio & Founder</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-black">Built by Jayasurya</h3>
+            <p class="text-sm text-neutral-700 leading-relaxed">
+              I am a Full Stack Software Engineer and Computer Science developer. I design and operate custom web platforms, data scraping pipelines, and B2B market intelligence products.
+            </p>
+            <p class="text-xs text-neutral-600">
+              Want to see my full engineering background, open-source projects, and client work?
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <a 
+              href="/profile" 
+              class="bg-[var(--blue)] hover:bg-[#a1dcff] text-black font-black text-sm px-5 py-3.5 border-2 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)] text-center transition-all">
+              View Developer Profile →
+            </a>
+            <a 
+              href="/profile#work" 
+              class="bg-white hover:bg-neutral-100 text-black font-bold text-xs px-4 py-2.5 border border-black text-center transition-all">
+              Featured Web Projects
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-3 border-t border-neutral-200 flex justify-between items-center text-xs text-neutral-500">
+          <span>Engineering credibility · Independent data products</span>
+          <Bars />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <Footer />
 </Layout>
-

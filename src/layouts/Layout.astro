@@ -1,3 +1,17 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+	ogImage?: string;
+}
+
+const {
+	title = "Jayasurya | Independent Data Studio & Full Stack Engineer",
+	description = "Independent data intelligence products, engineering hiring surge intelligence, and full-stack software development portfolio.",
+	ogImage = "/favicon.svg"
+} = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,7 +19,14 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Personal Portfolio</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
 	</head>
 	<body>
 		<slot />

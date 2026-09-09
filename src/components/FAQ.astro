@@ -1,0 +1,74 @@
+---
+const faqs = [
+  {
+    q: 'When and how is the report delivered?',
+    a: 'Every Monday morning at 8:00 AM UTC directly to your subscriber inbox. You receive an executive summary email plus an attached clean CSV file ready to import into your ATS, spreadsheet, or CRM.'
+  },
+  {
+    q: 'What data fields are included in each release?',
+    a: 'Every row contains: Company Name, Role Title, Department/Discipline, Work Location (Remote / On-site / Hybrid), Published Salary Range, ATS Source (Ashby, Greenhouse, Lever), Date Detected, and the Direct Application URL.'
+  },
+  {
+    q: 'How do you source and verify the data?',
+    a: 'We crawl official ATS endpoints (Ashby, Greenhouse, Lever) directly via automated pipelines. We run weekly deduplication and stale job filters so you never waste outreach time on ghost jobs or expired requisitions.'
+  },
+  {
+    q: 'Can I cancel anytime? What is the refund policy?',
+    a: 'Yes, cancellation is completely self-serve with zero lock-in via your Dodo Payments customer portal. If you cancel, your access continues until the end of your current monthly period.'
+  },
+  {
+    q: 'Can I see the data format before subscribing?',
+    a: 'Yes, you can explore the live 10-role data table preview on this page above, showcasing exact fields, verified ATS tags, salary ranges, and direct application links.'
+  },
+  {
+    q: 'Can I request custom companies to be tracked?',
+    a: 'Yes! Active subscribers can request high-growth companies using Ashby, Greenhouse, or Lever. We usually spin up new crawlers within 48 hours.'
+  }
+];
+---
+
+<section class="py-16 px-4" id="faq">
+  <div class="max-w-4xl mx-auto">
+    
+    <div class="text-center max-w-xl mx-auto mb-10">
+      <div class="inline-block bg-[var(--yellow)] px-3 py-1 text-xs font-black uppercase border-2 border-black mb-3">
+        Got Questions?
+      </div>
+      <h2 class="text-3xl md:text-5xl font-black">Frequently Asked Questions</h2>
+      <p class="text-neutral-700 mt-2 text-md">
+        Everything you need to know about the pipeline, delivery schedule, and formats.
+      </p>
+    </div>
+
+    <!-- FAQ Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {faqs.map(faq => (
+        <div class="bg-white border-3 border-black p-6 shadow-[5px_5px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+          <div>
+            <div class="flex items-start gap-2 mb-3">
+              <span class="bg-black text-white size-6 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">Q</span>
+              <h4 class="font-bold text-lg text-black leading-snug">{faq.q}</h4>
+            </div>
+            <p class="text-sm text-neutral-700 leading-relaxed pl-8">
+              {faq.a}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Help Box -->
+    <div class="mt-10 bg-white border-2 border-black p-5 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-left">
+        <span class="font-bold text-sm block">Have a specific question or custom enterprise request?</span>
+        <span class="text-xs text-neutral-600">I respond directly to all inquiries within a few hours.</span>
+      </div>
+      <a 
+        href="mailto:suryasunrise261@gmail.com?subject=Surge%20Report%20Question" 
+        class="bg-[var(--blue)] hover:bg-[#a1dcff] text-black font-bold text-sm px-5 py-2.5 border-2 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)] transition-all shrink-0">
+        Contact Jayasurya →
+      </a>
+    </div>
+
+  </div>
+</section>

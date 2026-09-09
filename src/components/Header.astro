@@ -4,9 +4,10 @@ import svgPinkStar from '../assets/pink-star.svg'
 import { author, buy } from '../sample'
 
 const links = [
-    { name: 'About', path: '/', target: '_self' },
+    { name: 'Surge Report 🔥', path: '/products/surge', target: '_self' },
+    { name: 'Products', path: '/products', target: '_self' },
+    { name: 'Profile', path: '/profile', target: '_self' },
     { name: 'Blog', path: 'https://blog.jayasurya.digital', target: '_self' },
-    //{ name: 'Hire Me', path: '/#', target: '_self' },
 ]
 
 const { pathname } = Astro.url
@@ -17,7 +18,7 @@ const { pathname } = Astro.url
     <img src={svgPinkStar.src} alt="svg" width="80" class="absolute -left-8 -bottom-5 hidden md:block" />
 
 
-    <div class="flex border-3 border-black bg-white max-w-[310px] md:max-w-xl m-auto relative z-10">
+    <div class="flex border-3 border-black bg-white max-w-[310px] md:max-w-2xl m-auto relative z-10">
         <!-- top boxes -->
         <div class="size-2 bg-white border-2 border-black absolute -top-2 -right-2"></div>
         <div class="size-2 bg-white border-2 border-black absolute -top-2 -left-2"></div>

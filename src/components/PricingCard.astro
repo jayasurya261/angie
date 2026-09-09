@@ -1,0 +1,102 @@
+---
+import Bars from "./Bars.astro"
+import svgPinkStar from '../assets/pink-star.svg'
+import { products } from '../data/products'
+
+const product = products.find(p => p.slug === 'surge') || products[0];
+---
+
+<section class="py-16 px-4" id="pricing">
+  <div class="max-w-4xl mx-auto">
+    
+    <div class="text-center max-w-xl mx-auto mb-10">
+      <div class="inline-block bg-[var(--blue)] px-3 py-1 text-xs font-black uppercase border-2 border-black mb-3">
+        Simple Pricing // Zero Lock-in
+      </div>
+      <h2 class="text-3xl md:text-5xl font-black">Direct Intelligence Access</h2>
+      <p class="text-neutral-700 mt-2 text-md">
+        One subscription for your entire recruiting or intelligence workflow. Less than the cost of one wasted candidate outreach.
+      </p>
+    </div>
+
+    <!-- Pricing Card Container -->
+    <div class="bg-white border-3 border-black shadow-[10px_10px_0px_rgba(0,0,0,1)] p-6 md:p-10 relative">
+      <img src={svgPinkStar.src} alt="" width="70" class="absolute -top-7 -right-6 hidden sm:block" />
+
+      <div class="grid grid-cols-1 md:grid-cols-[55%_45%] gap-8 items-center">
+        
+        <!-- Left details -->
+        <div class="space-y-4">
+          <div class="inline-block bg-black text-white px-2.5 py-1 text-xs font-mono font-bold uppercase">
+            Weekly Intelligence Feed
+          </div>
+          <h3 class="text-2xl md:text-3xl font-black">{product.name}</h3>
+          <p class="text-sm text-neutral-700 leading-relaxed">
+            Delivered straight to your inbox every Monday at 8:00 AM UTC. Built specifically for staffing agencies, headhunters, talent sourcers, and competitive research teams.
+          </p>
+
+          <hr class="border-black border-dashed" />
+
+          <ul class="space-y-2.5 text-sm font-medium">
+            <li class="flex items-center gap-2">
+              <i class="ri-check-line font-bold text-emerald-600 text-lg"></i>
+              <span>Full weekly raw CSV data dump + clean spreadsheet</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="ri-check-line font-bold text-emerald-600 text-lg"></i>
+              <span>Executive Monday Morning briefing (top 5 hiring spikes)</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="ri-check-line font-bold text-emerald-600 text-lg"></i>
+              <span>90+ tech companies tracked (Ashby, Greenhouse, Lever)</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="ri-check-line font-bold text-emerald-600 text-lg"></i>
+              <span>Direct application links & verified salary compensation bands</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="ri-check-line font-bold text-emerald-600 text-lg"></i>
+              <span>Priority target company crawler requests for subscribers</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Buy Box -->
+        <div class="bg-[#FEFFF0] border-2 border-black p-6 flex flex-col justify-between h-full text-center md:text-left shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-neutral-600 block mb-1">Standard Subscriber Plan</span>
+            <div class="flex items-baseline justify-center md:justify-start gap-1">
+              <span class="text-5xl font-black">${product.price}</span>
+              <span class="text-neutral-600 font-bold text-sm">/ month</span>
+            </div>
+            <p class="text-xs text-neutral-600 mt-2">
+              Cancel anytime self-serve with zero friction.
+            </p>
+          </div>
+
+          <div class="mt-6 space-y-3">
+            <a 
+              href={product.dodoLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full bg-[var(--yellow)] hover:bg-[#ffe37d] text-black font-black text-lg py-4 px-4 border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] transition-all block text-center">
+              Subscribe Now — ${product.price}/mo →
+            </a>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-neutral-300 text-[11px] text-neutral-500 text-center leading-normal">
+            Payments secured by Dodo Payments. Subscriptions renew monthly. Access remains active through paid cycle.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-6 pt-4 border-t-2 border-black flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-neutral-600">
+        <span>Need a multi-seat team license or custom data feed? Contact: <a href="mailto:suryasunrise261@gmail.com" class="underline font-bold text-black">suryasunrise261@gmail.com</a></span>
+        <Bars />
+      </div>
+
+    </div>
+
+  </div>
+</section>

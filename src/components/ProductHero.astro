@@ -1,0 +1,127 @@
+---
+import Bars from "./Bars.astro"
+import svgRedStar from '../assets/red-star.svg'
+import svgIdea from '../assets/idea.svg'
+import svgPinkStar from '../assets/pink-star.svg'
+import svgArrow from '../assets/arrow.svg'
+import svgUnderline from '../assets/underline.svg'
+import { products } from '../data/products'
+import { lastUpdatedDate, trackedCompaniesCount } from '../data/surge-sample'
+
+const product = products.find(p => p.slug === 'surge') || products[0];
+---
+
+<section class="pb-16 pt-10 md:pt-16 relative overflow-hidden">
+  <div class="max-w-5xl mx-auto px-4">
+    
+    <!-- Top Live Badge -->
+    <div class="flex items-center gap-3 mb-6">
+      <div class="inline-flex items-center gap-2 bg-black text-white px-4 py-1.5 text-xs md:text-sm font-bold tracking-wider uppercase border-2 border-black shadow-[3px_3px_0px_rgba(255,220,88,1)]">
+        <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-red-500 -ml-4.5"></span>
+        <span>Weekly Data Feed</span>
+        <span class="text-neutral-400">|</span>
+        <span class="text-[var(--yellow)]">Last Updated: {lastUpdatedDate}</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-8 items-start">
+      
+      <!-- Left Content Column -->
+      <div class="flex flex-col gap-6">
+        <div class="relative">
+          <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight">
+            <span>Engineering Hiring</span><br>
+            <span class="relative inline-block mt-1">
+              <span class="absolute bg-[var(--yellow)] w-full h-[45%] left-0 bottom-1 z-0"></span>
+              <span class="relative z-10">Surge Report</span>
+            </span>
+          </h1>
+          <img src={svgUnderline.src} alt="" width="180" class="mt-2" />
+        </div>
+
+        <p class="text-lg md:text-xl text-neutral-800 leading-relaxed font-normal">
+          The curated intelligence feed for staffing agencies, talent leads, and recruiters. We continuously crawl <span class="font-bold bg-white px-1.5 py-0.5 border border-black">{trackedCompaniesCount}+ top tech companies</span> directly via Ashby, Greenhouse, and Lever API endpoints to deliver clean, verified hiring spikes every Monday morning.
+        </p>
+
+        <!-- Key Metrics Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+          <div class="bg-white border-2 border-black p-3.5 shadow-[3px_3px_0px_rgba(0,0,0,1)]">
+            <span class="text-2xl md:text-3xl font-black block">90+</span>
+            <span class="text-xs uppercase font-bold text-neutral-600">Tracked Companies</span>
+          </div>
+          <div class="bg-white border-2 border-black p-3.5 shadow-[3px_3px_0px_rgba(0,0,0,1)]">
+            <span class="text-2xl md:text-3xl font-black block text-emerald-700">100%</span>
+            <span class="text-xs uppercase font-bold text-neutral-600">Direct ATS Verified</span>
+          </div>
+          <div class="bg-white border-2 border-black p-3.5 shadow-[3px_3px_0px_rgba(0,0,0,1)] col-span-2 sm:col-span-1">
+            <span class="text-2xl md:text-3xl font-black block">0</span>
+            <span class="text-xs uppercase font-bold text-neutral-600">Ghost / Scraped Jobs</span>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="flex flex-wrap items-center gap-4 pt-4">
+          <a 
+            href={product.dodoLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="bg-[var(--yellow)] hover:bg-[#ffe37d] text-black text-lg font-bold px-8 py-4 border-3 border-black shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0px_rgba(0,0,0,1)] transition-all flex items-center gap-3">
+            <span>Subscribe for ${product.price}/mo</span>
+            <i class="ri-arrow-right-line text-xl font-bold"></i>
+          </a>
+        </div>
+
+        <p class="text-xs text-neutral-600">
+          🔒 Secure checkout via Dodo Payments · Cancel anytime with 1-click · Subscriptions renew monthly
+        </p>
+
+      </div>
+
+      <!-- Right Feature Card Column -->
+      <div class="relative mt-6 lg:mt-0">
+        <img src={svgRedStar.src} width="70" alt="" class="absolute -top-8 -right-4 z-10 hidden sm:block" />
+        <img src={svgIdea.src} width="50" alt="" class="absolute -bottom-6 -left-4 z-10 hidden sm:block" />
+
+        <div class="bg-white border-3 border-black p-6 shadow-[8px_8px_0px_rgba(0,0,0,1)] relative">
+          <div class="flex items-center justify-between border-b-2 border-black pb-3 mb-4">
+            <span class="font-bold text-sm tracking-wider uppercase bg-black text-white px-2 py-0.5">Report Highlights</span>
+            <span class="text-xs font-bold text-neutral-500">FORMAT: CSV + REPORT</span>
+          </div>
+
+          <ul class="space-y-3.5 text-sm font-medium">
+            <li class="flex items-start gap-2.5">
+              <i class="ri-checkbox-circle-fill text-lg text-emerald-600 mt-0.5 shrink-0"></i>
+              <span><strong>Weekly Delivery:</strong> Sent every Monday at 8:00 AM UTC before candidates hit public job feeds.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="ri-checkbox-circle-fill text-lg text-emerald-600 mt-0.5 shrink-0"></i>
+              <span><strong>Enriched Columns:</strong> Company, Title, Department, Location, Salary Range, ATS Source, Direct Application URL.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="ri-checkbox-circle-fill text-lg text-emerald-600 mt-0.5 shrink-0"></i>
+              <span><strong>Surge Velocity Metric:</strong> Week-over-week hiring delta to flag teams actively expanding headcount.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="ri-checkbox-circle-fill text-lg text-emerald-600 mt-0.5 shrink-0"></i>
+              <span><strong>Zero Scraped Clutter:</strong> Every opening is verified directly against official career pipelines.</span>
+            </li>
+          </ul>
+
+          <div class="mt-6 pt-4 border-t-2 border-black flex justify-between items-center bg-[var(--blue)] p-3 border-2">
+            <div>
+              <span class="text-xs font-bold uppercase block text-neutral-700">Monthly Plan</span>
+              <span class="text-2xl font-black">${product.price} <span class="text-sm font-normal">/ month</span></span>
+            </div>
+            <a href="#pricing" class="underline font-bold text-sm hover:text-neutral-700">View Plan Details →</a>
+          </div>
+
+          <div class="mt-4">
+            <Bars />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
