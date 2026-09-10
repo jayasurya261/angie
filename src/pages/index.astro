@@ -13,27 +13,6 @@ const surgeProduct = products.find(p => p.slug === 'surge') || products[0];
 
 const pageTitle = "Jayasurya Studio | Data Analytics, Intelligence Products & Engineering";
 const pageDesc = "Independent Data & Software Studio. We engineer automated B2B market intelligence feeds, talent analytics, data strategy, and scalable full-stack web platforms.";
-
-const featuredWorks = [
-  { 
-    name: 'DataRupee', 
-    desc: 'Finance & analytics platform engineered for tracking market metrics, structured data presentation, and actionable financial insights.',
-    cover: '/image.png',
-    link: 'https://datarupee.space'
-  },
-  { 
-    name: 'Codesapiens Management Portal', 
-    desc: 'Full-stack institute management & analytics platform built with React, Node.js, and MongoDB, actively serving 500+ users.',
-    cover: 'https://axvfpbdzas50.objectstorage.ap-hyderabad-1.oci.customer-oci.com/n/axvfpbdzas50/b/surya/o/codesapiens-website-home-pageScreenshot%202025-10-12%20124305.png',
-    link: 'https://www.codesapiens.in'
-  },
-  { 
-    name: 'RepoWave - Open Source Finder', 
-    desc: 'Open-source issue discovery & data filtering dashboard with tech-stack indexing and automated issue detection.',
-    cover: 'https://res.cloudinary.com/dqudvximt/image/upload/v1773309490/Screenshot_2026-03-12_152731_lyk6jq.png',
-    link: 'https://repowave.space'
-  },
-];
 ---
 
 <Layout title={pageTitle} description={pageDesc}>
@@ -58,76 +37,44 @@ const featuredWorks = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <div class="bg-white border-3 border-black p-5 shadow-[5px_5px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
-          <div>
-            <div class="size-10 bg-[var(--yellow)] border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
-              <i class="ri-radar-line"></i>
-            </div>
-            <h3 class="font-black text-lg mb-2">B2B Market Intelligence</h3>
-            <p class="text-xs text-neutral-700 leading-relaxed">
-              Automated data products tracking sudden engineering hiring spikes, headcount expansion, and verified opening feeds across 90+ companies.
-            </p>
+        <div class="bg-white border-3 border-black p-5 shadow-[5px_5px_0px_rgba(0,0,0,1)]">
+          <div class="size-10 bg-[var(--yellow)] border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
+            <i class="ri-radar-line"></i>
           </div>
-          <div class="mt-4 pt-3 border-t border-neutral-200">
-            <a href="/products/surge" class="text-xs font-bold underline flex items-center gap-1 hover:text-neutral-700">
-              <span>Surge Report ($49/mo)</span>
-              <i class="ri-arrow-right-line"></i>
-            </a>
-          </div>
+          <h3 class="font-black text-lg mb-2">B2B Market Intelligence</h3>
+          <p class="text-xs text-neutral-700 leading-relaxed">
+            Automated data products tracking sudden engineering hiring spikes, headcount expansion, and verified opening feeds across 90+ companies.
+          </p>
         </div>
 
-        <div class="bg-white border-3 border-black p-5 shadow-[5px_5px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
-          <div>
-            <div class="size-10 bg-emerald-200 border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
-              <i class="ri-line-chart-line"></i>
-            </div>
-            <h3 class="font-black text-lg mb-2">Data Analytics & Benchmarks</h3>
-            <p class="text-xs text-neutral-700 leading-relaxed">
-              Compensation distribution modeling, talent velocity indicators, and normalized salary analytics across remote hubs and disciplines.
-            </p>
+        <div class="bg-white border-3 border-black p-5 shadow-[5px_5px_0px_rgba(0,0,0,1)]">
+          <div class="size-10 bg-emerald-200 border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
+            <i class="ri-line-chart-line"></i>
           </div>
-          <div class="mt-4 pt-3 border-t border-neutral-200">
-            <a href="/products" class="text-xs font-bold underline flex items-center gap-1 hover:text-neutral-700">
-              <span>Explore Benchmarks</span>
-              <i class="ri-arrow-right-line"></i>
-            </a>
-          </div>
+          <h3 class="font-black text-lg mb-2">Data Analytics & Benchmarks</h3>
+          <p class="text-xs text-neutral-700 leading-relaxed">
+            Compensation distribution modeling, talent velocity indicators, and normalized salary analytics across remote hubs and disciplines.
+          </p>
         </div>
 
-        <div class="bg-white border-3 border-black p-5 shadow-[5px_5px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
-          <div>
-            <div class="size-10 bg-[var(--blue)] border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
-              <i class="ri-pie-chart-2-line"></i>
-            </div>
-            <h3 class="font-black text-lg mb-2">Data Strategy & Advisory</h3>
-            <p class="text-xs text-neutral-700 leading-relaxed">
-              Helping staffing firms, sourcers, and funds architect custom data extraction workflows, competitor talent mapping, and CRM pipelines.
-            </p>
+        <div class="bg-white border-3 border-black p-5 shadow-[5px_5px_0px_rgba(0,0,0,1)]">
+          <div class="size-10 bg-[var(--blue)] border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
+            <i class="ri-pie-chart-2-line"></i>
           </div>
-          <div class="mt-4 pt-3 border-t border-neutral-200">
-            <a href="mailto:suryasunrise261@gmail.com?subject=Data%20Strategy%20Inquiry" class="text-xs font-bold underline flex items-center gap-1 hover:text-neutral-700">
-              <span>Inquire Strategy</span>
-              <i class="ri-arrow-right-line"></i>
-            </a>
-          </div>
+          <h3 class="font-black text-lg mb-2">Data Strategy & Advisory</h3>
+          <p class="text-xs text-neutral-700 leading-relaxed">
+            Helping staffing firms, sourcers, and funds architect custom data extraction workflows, competitor talent mapping, and CRM pipelines.
+          </p>
         </div>
 
-        <div class="bg-white border-3 border-black p-5 shadow-[5px_5px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
-          <div>
-            <div class="size-10 bg-purple-200 border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
-              <i class="ri-bar-chart-grouped-line"></i>
-            </div>
-            <h3 class="font-black text-lg mb-2">Data Analytics & Dashboards</h3>
-            <p class="text-xs text-neutral-700 leading-relaxed">
-              Exploratory data analysis, interactive metrics dashboards, and visual intelligence to transform raw data streams into high-conviction decisions.
-            </p>
+        <div class="bg-white border-3 border-black p-5 shadow-[5px_5px_0px_rgba(0,0,0,1)]">
+          <div class="size-10 bg-purple-200 border-2 border-black flex items-center justify-center font-bold text-lg mb-3">
+            <i class="ri-bar-chart-grouped-line"></i>
           </div>
-          <div class="mt-4 pt-3 border-t border-neutral-200">
-            <a href="/products" class="text-xs font-bold underline flex items-center gap-1 hover:text-neutral-700">
-              <span>Explore Analytics Feeds</span>
-              <i class="ri-arrow-right-line"></i>
-            </a>
-          </div>
+          <h3 class="font-black text-lg mb-2">Data Analytics & Dashboards</h3>
+          <p class="text-xs text-neutral-700 leading-relaxed">
+            Exploratory data analysis, interactive metrics dashboards, and visual intelligence to transform raw data streams into high-conviction decisions.
+          </p>
         </div>
 
       </div>
@@ -174,7 +121,7 @@ const featuredWorks = [
               </div>
               <div class="bg-emerald-100 border border-black p-2.5 col-span-2 sm:col-span-1">
                 <span class="block text-emerald-800 text-[10px] uppercase">Coverage</span>
-                <span>100% Direct ATS Feeds</span>
+                <span>100% Verified</span>
               </div>
             </div>
           </div>
@@ -191,7 +138,7 @@ const featuredWorks = [
               <a 
                 href="/products/surge" 
                 class="w-full bg-[var(--yellow)] hover:bg-[#ffe37d] text-black font-black text-sm py-3 px-4 border-2 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_rgba(0,0,0,1)] transition-all flex items-center justify-center gap-1.5">
-                <span>View Live Table & Subscribe →</span>
+                <span>View Product →</span>
               </a>
               <a 
                 href="/products/surge#sample-data" 
@@ -204,63 +151,20 @@ const featuredWorks = [
         </div>
 
         <div class="mt-6 pt-4 border-t border-neutral-200 flex justify-between items-center text-xs text-neutral-500">
-          <span>Dedicated product page: jayasurya.digital/products/surge</span>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 4. Data Strategy & Analytics Case Studies / Featured Software Works -->
-  <section class="py-16 px-4 bg-[#FEFFF0] border-y-3 border-black">
-    <div class="max-w-5xl mx-auto">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-        <div>
-          <div class="inline-block bg-[var(--blue)] px-3 py-1 text-xs font-black uppercase border-2 border-black mb-3">
-            Analytics & Software Platforms
-          </div>
-          <h2 class="text-3xl md:text-5xl font-black">Featured Products & Systems</h2>
-          <p class="text-neutral-700 mt-2 text-md">
-            Production web platforms and data analytics tooling engineered by the studio.
-          </p>
-        </div>
-
-        <a 
-          href="/profile" 
-          class="bg-white hover:bg-neutral-100 text-black font-bold text-sm px-5 py-2.5 border-2 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)] transition-all shrink-0">
-          View Full Developer Profile →
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {featuredWorks.map(item => (
-          <a 
-            href={item.link} 
-            target="_blank" 
-            rel="noreferrer" 
-            class="bg-white border-3 border-black p-5 shadow-[5px_5px_0px_rgba(0,0,0,1)] flex flex-col justify-between group hover:shadow-[7px_7px_0px_rgba(0,0,0,1)] transition-all">
-            <div>
-              <div class="w-full h-[160px] overflow-hidden border-2 border-black mb-4 bg-neutral-100">
-                <img src={item.cover} alt={item.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              </div>
-              <h3 class="font-black text-lg mb-1.5">{item.name}</h3>
-              <p class="text-xs text-neutral-700 leading-relaxed mb-4">{item.desc}</p>
-            </div>
-            <div class="pt-3 border-t border-neutral-200 text-xs font-bold text-black flex items-center justify-between">
-              <span>Visit Live Platform</span>
-              <i class="ri-arrow-right-up-line"></i>
-            </div>
+          <a href="/products/surge" class="hover:text-black transition-colors flex items-center gap-1">
+            <span>Dedicated product page:</span>
+            <span class="underline font-mono font-bold text-neutral-800">jayasurya.digital/products/surge</span>
+            <span>↗</span>
           </a>
-        ))}
+        </div>
+
       </div>
 
     </div>
   </section>
 
-  <!-- 5. Data Analytics & Pipeline Strategy -->
-  <section class="py-16 px-4">
+  <!-- 4. Data Analytics & Pipeline Strategy -->
+  <section class="py-16 px-4 bg-[#f8f9eb] border-t-3 border-black">
     <div class="max-w-5xl mx-auto">
       
       <div class="text-center max-w-2xl mx-auto mb-12">
