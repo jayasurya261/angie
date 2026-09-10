@@ -1,0 +1,100 @@
+---
+import '../styles/global.css'
+import Layout from "../layouts/Layout.astro"
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import svgUnderline from '../assets/underline.svg'
+import svgRedStar from '../assets/red-star.svg'
+import svgPinkStar from '../assets/pink-star.svg'
+import { author } from '../sample'
+
+const pageTitle = "Custom Data Feed & Analytics Inquiry | Jayasurya Data Studio";
+const pageDesc = "Submit your requirements for custom company crawlers, dedicated ATS data feeds, talent velocity analytics, or join product waitlists.";
+---
+
+<Layout title={pageTitle} description={pageDesc}>
+  <Header />
+
+  <section class="py-12 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10 relative">
+        <img src={svgRedStar.src} alt="" width="55" class="absolute -top-7 -right-6 hidden sm:block" />
+        <img src={svgPinkStar.src} alt="" width="50" class="absolute -top-7 -left-6 hidden sm:block" />
+
+        <div class="inline-block bg-[var(--yellow)] px-3 py-1 text-xs font-black uppercase border-2 border-black mb-3">
+          Custom Data Pipelines & Feeds
+        </div>
+        
+        <h1 class="text-3xl md:text-5xl font-black leading-tight">
+          <span>Custom Feed & Strategy</span><br>
+          <span class="relative inline-block mt-1">
+            <span class="absolute bg-[var(--yellow)] w-full h-[40%] left-0 bottom-1 z-0"></span>
+            <span class="relative z-10">Inquiry Form</span>
+          </span>
+        </h1>
+        <img src={svgUnderline.src} alt="" width="200" class="mx-auto mt-2" />
+
+        <p class="text-neutral-700 mt-4 text-sm md:text-base leading-relaxed">
+          Need automated crawlers tracking 500+ target companies, custom talent intelligence feeds, or early-access waitlist entry? Fill out the brief form below and we will respond within <strong>12 hours</strong>.
+        </p>
+      </div>
+
+      <!-- Quick Feature Highlights -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+        <div class="bg-white border-2 border-black p-3.5 shadow-[3px_3px_0px_rgba(0,0,0,1)] text-center">
+          <span class="text-xs font-black uppercase text-neutral-500 block mb-0.5">Coverage</span>
+          <span class="font-black text-sm">Ashby, Greenhouse, Lever + API</span>
+        </div>
+        <div class="bg-white border-2 border-black p-3.5 shadow-[3px_3px_0px_rgba(0,0,0,1)] text-center">
+          <span class="text-xs font-black uppercase text-neutral-500 block mb-0.5">Delivery</span>
+          <span class="font-black text-sm">CSV, JSON, Webhook & API</span>
+        </div>
+        <div class="bg-[#FEFFF0] border-2 border-black p-3.5 shadow-[3px_3px_0px_rgba(0,0,0,1)] text-center">
+          <span class="text-xs font-black uppercase text-neutral-500 block mb-0.5">Response Time</span>
+          <span class="font-black text-sm text-emerald-700">Guaranteed &lt; 12 Hours</span>
+        </div>
+      </div>
+
+      <!-- Google Form Embed Container -->
+      <div class="bg-white border-3 border-black p-2 sm:p-6 shadow-[8px_8px_0px_rgba(0,0,0,1)] relative overflow-hidden">
+        
+        <!-- Form Window Titlebar -->
+        <div class="p-3 bg-neutral-100 border-b-2 border-black mb-4 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="size-3 bg-red-400 border border-black rounded-full"></div>
+            <div class="size-3 bg-yellow-400 border border-black rounded-full"></div>
+            <div class="size-3 bg-green-400 border border-black rounded-full"></div>
+            <span class="font-mono text-xs font-bold ml-2 text-neutral-700">custom_inquiry_feed.form</span>
+          </div>
+          <span class="text-xs font-bold bg-white border border-black px-2 py-0.5">🔒 SSL Secure</span>
+        </div>
+
+        <div class="w-full flex justify-center">
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLScK5X7nQS2_Tg8gbdXe1ps_dskjgcyhO4laLgvVvwP6JbahfQ/viewform?embedded=true" 
+            width="100%" 
+            height="1550" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0"
+            class="w-full max-w-full border-0"
+            loading="lazy">
+            Loading form…
+          </iframe>
+        </div>
+
+      </div>
+
+      <!-- Direct Contact Fallback -->
+      <div class="mt-8 text-center text-xs text-neutral-600 space-y-1">
+        <p>Prefer direct communication? Email me directly at <a href={`mailto:${author.email}`} class="font-bold underline text-black">{author.email}</a>.</p>
+        <p>You can also connect on <a href={author.LinkedIn} target="_blank" rel="noopener noreferrer" class="font-bold underline text-blue-700">LinkedIn</a> or view my <a href="/profile" class="font-bold underline text-black">full developer profile</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

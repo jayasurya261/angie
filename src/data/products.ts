@@ -43,7 +43,7 @@ export const products: DataProduct[] = [
     interval: 'monthly',
     status: 'coming_soon',
     badge: '⏳ IN PIPELINE',
-    dodoLink: 'mailto:suryasunrise261@gmail.com?subject=Join%20Waitlist%3A%20Salary%20Benchmarks',
+    dodoLink: '/inquire',
     coverage: '250+ Remote-First Engineering Teams',
     cadence: 'Bi-Weekly on Wednesdays',
     highlights: [
@@ -61,7 +61,7 @@ export const products: DataProduct[] = [
     interval: 'monthly',
     status: 'coming_soon',
     badge: '⏳ IN PIPELINE',
-    dodoLink: 'mailto:suryasunrise261@gmail.com?subject=Join%20Waitlist%3A%20Velocity%20Index',
+    dodoLink: '/inquire',
     coverage: '500+ Tech & SaaS Organizations',
     cadence: 'Monthly Deep Dive',
     highlights: [
