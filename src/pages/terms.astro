@@ -1,0 +1,122 @@
+---
+import '../styles/global.css'
+import Layout from "../layouts/Layout.astro"
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import svgUnderline from '../assets/underline.svg'
+import { author } from '../sample'
+
+const pageTitle = "Terms of Service | Jayasurya Data Studio";
+const pageDesc = "Terms of Service and subscription policies for Jayasurya Data Studio data intelligence feeds and software platforms.";
+const lastUpdated = "March 10, 2026";
+---
+
+<Layout title={pageTitle} description={pageDesc}>
+  <Header />
+
+  <section class="py-16 md:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Top Tag & Header -->
+      <div class="mb-12">
+        <div class="inline-block bg-[var(--yellow)] px-3 py-1 text-xs font-black uppercase border-2 border-black mb-3">
+          Legal & Subscriptions
+        </div>
+        <h1 class="text-4xl md:text-5xl font-black leading-tight">Terms of Service</h1>
+        <img src={svgUnderline.src} alt="" width="160" class="mt-2" />
+        <p class="text-sm font-bold text-neutral-600 mt-3">
+          Last Updated: {lastUpdated} · Effective Immediately
+        </p>
+      </div>
+
+      <!-- Terms Content Card -->
+      <div class="bg-white border-3 border-black p-6 md:p-10 shadow-[8px_8px_0px_rgba(0,0,0,1)] space-y-8 text-neutral-800 text-sm md:text-base leading-relaxed">
+        
+        <div>
+          <h2 class="text-2xl font-black text-black mb-3">1. Agreement to Terms</h2>
+          <p>
+            By visiting <strong>jayasurya.digital</strong> or subscribing to any of our data intelligence products (including the <strong>Engineering Hiring Surge Report</strong>), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not access or use our services.
+          </p>
+        </div>
+
+        <hr class="border-neutral-300 border-dashed" />
+
+        <div>
+          <h2 class="text-2xl font-black text-black mb-3">2. Description of Service</h2>
+          <p>
+            <strong>Jayasurya Data Studio</strong> provides curated B2B market intelligence, hiring surge reports, and structured CSV datasets harvested from official company ATS portals (Ashby, Greenhouse, Lever). Data feeds are delivered digitally on a weekly schedule (Mondays at 8:00 AM UTC).
+          </p>
+        </div>
+
+        <hr class="border-neutral-300 border-dashed" />
+
+        <div>
+          <h2 class="text-2xl font-black text-black mb-3">3. Subscriptions, Payments & Renewal</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Recurring Billing:</strong> Paid subscriptions (e.g., $49/month) are billed on a recurring monthly cycle starting on the date of your initial purchase.</li>
+            <li><strong>Payment Processor:</strong> All billing, invoicing, and subscription renewals are managed securely through <strong>Dodo Payments</strong>.</li>
+            <li><strong>Price Changes:</strong> We reserve the right to modify subscription pricing with advance written notice to active subscribers prior to the renewal date.</li>
+          </ul>
+        </div>
+
+        <hr class="border-neutral-300 border-dashed" />
+
+        <div>
+          <h2 class="text-2xl font-black text-black mb-3">4. Cancellation & Refund Policy</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>1-Click Self-Serve Cancellation:</strong> You may cancel your subscription at any time with zero penalty or lock-in via the Dodo Payments customer portal link included in every invoice.</li>
+            <li><strong>Access After Cancellation:</strong> Upon cancellation, your data feed delivery will remain fully active until the conclusion of your current paid billing period.</li>
+            <li><strong>Refund Policy:</strong> Due to the immediate digital delivery of proprietary weekly intelligence data and CSV feeds, payments are non-refundable once a billing cycle commences. If you experience technical delivery issues, please contact support for immediate remediation.</li>
+          </ul>
+        </div>
+
+        <hr class="border-neutral-300 border-dashed" />
+
+        <div>
+          <h2 class="text-2xl font-black text-black mb-3">5. Commercial Data License & Acceptable Use</h2>
+          <p class="mb-3">
+            Subscribers are granted a non-exclusive, non-transferable license to use the delivered datasets for internal business purposes, including:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Candidate sourcing, recruiting, and headhunting outreach.</li>
+            <li>Competitive talent intelligence and internal compensation benchmarking.</li>
+            <li>B2B sales prospecting and lead generation.</li>
+          </ul>
+          <p class="mt-3 font-bold text-black">
+            You may not publicly resell, redistribute, or publish our raw CSV datasets in bulk to third parties without prior written consent.
+          </p>
+        </div>
+
+        <hr class="border-neutral-300 border-dashed" />
+
+        <div>
+          <h2 class="text-2xl font-black text-black mb-3">6. Disclaimer of Warranties</h2>
+          <p>
+            Our data feeds are compiled from public ATS endpoints using automated crawler technology. While we employ automated deduplication and cleansing pipelines, data is provided on an "as-is" and "as-available" basis without warranties regarding external employer response rates or hiring decisions.
+          </p>
+        </div>
+
+        <hr class="border-neutral-300 border-dashed" />
+
+        <div>
+          <h2 class="text-2xl font-black text-black mb-3">7. Contact & Support</h2>
+          <p>
+            For subscription questions, billing inquiries, or enterprise team licensing, please contact:
+          </p>
+          <div class="mt-3 p-4 bg-[#FEFFF0] border-2 border-black space-y-1 font-mono text-sm">
+            <div><strong>Entity:</strong> Jayasurya Data Studio</div>
+            <div><strong>Support Email:</strong> <a href={`mailto:${author.email}`} class="underline font-bold">{author.email}</a></div>
+            <div><strong>Location:</strong> {author.location}</div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-neutral-300">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

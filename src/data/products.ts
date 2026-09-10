@@ -23,7 +23,7 @@ export const products: DataProduct[] = [
     interval: 'monthly',
     status: 'live',
     badge: '🔥 LIVE NOW',
-    dodoLink: 'https://pay.dodopayments.com/buy/surge-report',
+    dodoLink: 'https://dodo.pe/4x5roas0oom',
     coverage: '90+ High-Growth Tech & AI Companies',
     cadence: 'Every Monday @ 8:00 AM UTC',
     highlights: [

@@ -1,0 +1,181 @@
+---
+import '../styles/global.css'
+import Layout from "../layouts/Layout.astro"
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import svgUnderline from '../assets/underline.svg'
+import svgRedStar from '../assets/red-star.svg'
+import svgPinkStar from '../assets/pink-star.svg'
+import { author } from '../sample'
+
+const pageTitle = "Contact & Custom Inquiries | Jayasurya Data Studio";
+const pageDesc = "Get in touch with Jayasurya Data Studio for custom scraping pipelines, enterprise data feeds, consulting, or subscriber support.";
+---
+
+<Layout title={pageTitle} description={pageDesc}>
+  <Header />
+
+  <section class="py-16 md:py-24 px-4">
+    <div class="max-w-5xl mx-auto">
+      
+      <!-- Top Tag & Header -->
+      <div class="max-w-3xl mb-12 relative">
+        <div class="inline-flex items-center gap-2 bg-black text-white px-3 py-1 text-xs font-black uppercase mb-3">
+          <span class="w-2 h-2 rounded-full bg-[var(--yellow)]"></span>
+          <span>Studio Inquiries & Support</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl font-black leading-tight">
+          <span>Let’s Build Something</span><br>
+          <span class="relative inline-block mt-1">
+            <span class="absolute bg-[var(--yellow)] w-full h-[40%] left-0 bottom-1 z-0"></span>
+            <span class="relative z-10">Data-Driven Together</span>
+          </span>
+        </h1>
+        <img src={svgUnderline.src} alt="" width="200" class="mt-2" />
+
+        <p class="text-lg text-neutral-700 mt-4 leading-relaxed">
+          Have a custom target list of 500+ companies to crawl? Need multi-seat agency access or full-stack software development? I respond to all inquiries within <strong>12 hours</strong>.
+        </p>
+      </div>
+
+      <!-- Main Contact Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8">
+        
+        <!-- Left Column: Inquiry Types & Email Composer Trigger -->
+        <div class="bg-white border-3 border-black p-6 md:p-8 shadow-[8px_8px_0px_rgba(0,0,0,1)] space-y-6 relative">
+          <img src={svgRedStar.src} alt="" width="55" class="absolute -top-6 -right-3 hidden sm:block" />
+
+          <h2 class="text-2xl font-black">Choose Your Inquiry Type</h2>
+
+          <div class="space-y-4">
+            
+            <a 
+              href={`mailto:${author.email}?subject=Custom%20Data%20Pipeline%20Inquiry&body=Hi%20Jayasurya%2C%0A%0AI%20am%20interested%20in%20a%20custom%20data%20scraping%20pipeline%20for%20the%20following%20target%20companies%20%2F%20verticals%3A%0A%0A-%20Target%20list%3A%0A-%20Preferred%20frequency%3A%0A-%20Specific%20fields%20needed%3A%0A%0AThanks!`}
+              class="bg-[#FEFFF0] hover:bg-neutral-100 border-2 border-black p-4 flex items-start gap-4 transition-all block group">
+              <div class="size-10 bg-[var(--yellow)] border-2 border-black flex items-center justify-center font-bold text-lg shrink-0 mt-0.5">
+                <i class="ri-radar-fill"></i>
+              </div>
+              <div>
+                <h3 class="font-black text-base group-hover:underline">Custom Crawler Pipeline Request →</h3>
+                <p class="text-xs text-neutral-600 mt-0.5">Automate data extraction across custom company lists (Ashby, Greenhouse, Lever, etc.).</p>
+              </div>
+            </a>
+
+            <a 
+              href={`mailto:${author.email}?subject=Enterprise%20Multi-Seat%20License%20Inquiry&body=Hi%20Jayasurya%2C%0A%0AWe%20would%20like%20to%20inquire%20about%20a%20multi-seat%20or%20agency-wide%20subscription%20to%20the%20Engineering%20Hiring%20Surge%20Report.%0A%0ACompany%20Name%3A%0ATeam%20Size%3A%0A%0AThanks!`}
+              class="bg-white hover:bg-neutral-100 border-2 border-black p-4 flex items-start gap-4 transition-all block group">
+              <div class="size-10 bg-[var(--blue)] border-2 border-black flex items-center justify-center font-bold text-lg shrink-0 mt-0.5">
+                <i class="ri-team-fill"></i>
+              </div>
+              <div>
+                <h3 class="font-black text-base group-hover:underline">Enterprise / Multi-Seat License →</h3>
+                <p class="text-xs text-neutral-600 mt-0.5">Team-wide CSV feeds, webhook deliveries, and dedicated account support.</p>
+              </div>
+            </a>
+
+            <a 
+              href={`mailto:${author.email}?subject=Software%20Development%20Consulting&body=Hi%20Jayasurya%2C%0A%0AI%20would%20like%20to%20discuss%20a%20full-stack%20software%20development%20project.%0A%0AProject%20Overview%3A%0ATimeline%3A%0A%0AThanks!`}
+              class="bg-white hover:bg-neutral-100 border-2 border-black p-4 flex items-start gap-4 transition-all block group">
+              <div class="size-10 bg-emerald-200 border-2 border-black flex items-center justify-center font-bold text-lg shrink-0 mt-0.5">
+                <i class="ri-code-s-slash-fill"></i>
+              </div>
+              <div>
+                <h3 class="font-black text-base group-hover:underline">Software Development & Consulting →</h3>
+                <p class="text-xs text-neutral-600 mt-0.5">Full-stack React/Node.js web platforms, API integrations, and data visualization tools.</p>
+              </div>
+            </a>
+
+            <a 
+              href={`mailto:${author.email}?subject=General%20Subscriber%20Support&body=Hi%20Jayasurya%2C%0A%0AI%20have%20a%20question%20regarding%20my%20subscription%20%2F%20the%20Surge%20Report%3A%0A%0A`}
+              class="bg-white hover:bg-neutral-100 border-2 border-black p-4 flex items-start gap-4 transition-all block group">
+              <div class="size-10 bg-purple-200 border-2 border-black flex items-center justify-center font-bold text-lg shrink-0 mt-0.5">
+                <i class="ri-customer-service-2-fill"></i>
+              </div>
+              <div>
+                <h3 class="font-black text-base group-hover:underline">Subscriber Support & Billing →</h3>
+                <p class="text-xs text-neutral-600 mt-0.5">Account updates, delivery questions, and technical assistance.</p>
+              </div>
+            </a>
+
+          </div>
+
+          <div class="pt-4 border-t border-neutral-300">
+          </div>
+        </div>
+
+        <!-- Right Column: Direct Info & Social Channels -->
+        <div class="space-y-6">
+          
+          <div class="bg-white border-3 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,1)] space-y-4">
+            <h3 class="font-black text-xl border-b-2 border-black pb-2">Direct Contact</h3>
+            
+            <div class="space-y-3 text-sm">
+              <div>
+                <span class="text-xs uppercase font-bold text-neutral-500 block">Primary Email</span>
+                <a href={`mailto:${author.email}`} class="font-bold text-black underline text-base">
+                  {author.email}
+                </a>
+              </div>
+
+              <div>
+                <span class="text-xs uppercase font-bold text-neutral-500 block">Location & Timezone</span>
+                <span class="font-medium text-neutral-800">{author.location} (IST / UTC+5:30)</span>
+              </div>
+
+              <div>
+                <span class="text-xs uppercase font-bold text-neutral-500 block">Response Commitment</span>
+                <span class="font-medium text-emerald-700 font-bold">Guaranteed within 12 hours</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#FEFFF0] border-3 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,1)] space-y-4">
+            <h3 class="font-black text-xl border-b-2 border-black pb-2">Professional Profiles</h3>
+            
+            <div class="flex flex-col gap-2.5">
+              <a 
+                href={author.LinkedIn} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="bg-white hover:bg-neutral-100 border-2 border-black p-3 font-bold text-sm flex items-center justify-between transition-all">
+                <span class="flex items-center gap-2">
+                  <i class="ri-linkedin-box-fill text-blue-600 text-lg"></i>
+                  <span>LinkedIn Profile</span>
+                </span>
+                <i class="ri-arrow-right-up-line"></i>
+              </a>
+
+              <a 
+                href="https://github.com/jayasurya261" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="bg-white hover:bg-neutral-100 border-2 border-black p-3 font-bold text-sm flex items-center justify-between transition-all">
+                <span class="flex items-center gap-2">
+                  <i class="ri-github-fill text-black text-lg"></i>
+                  <span>GitHub Repository</span>
+                </span>
+                <i class="ri-arrow-right-up-line"></i>
+              </a>
+
+              <a 
+                href="/profile" 
+                class="bg-[var(--yellow)] hover:bg-[#ffe37d] border-2 border-black p-3 font-bold text-sm flex items-center justify-between transition-all">
+                <span class="flex items-center gap-2">
+                  <i class="ri-user-smile-line text-black text-lg"></i>
+                  <span>Developer Portfolio & Resume</span>
+                </span>
+                <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
